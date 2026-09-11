@@ -1,0 +1,229 @@
+{
+  "experiment_id": "ETTR-CTL-2-GPT2",
+  "behavioral_baseline": {
+    "clean_top1_accuracy": 0.0052,
+    "corrupt_top1_accuracy": 0.0,
+    "mean_clean_margin": 1.672577,
+    "mean_corrupt_margin": -1.184263,
+    "overall_margin": 0.488314,
+    "train_margin": 0.46491,
+    "calibration_margin": 0.447998,
+    "test_margin": 0.575439,
+    "bootstrap_95ci": [
+      0.125756,
+      0.849913
+    ],
+    "sign_flip_p": 0.007599,
+    "template_variance_ratio": 0.2351,
+    "pair_variance_ratio": 0.6647,
+    "classification": "HELD_OUT_CONTEXTUAL_MARGIN_SUPPORTED"
+  },
+  "dataset": {
+    "records": 192,
+    "templates": 12,
+    "ordered_pairs": 16,
+    "target_names": 32,
+    "version": "v1.1",
+    "scientific_sha256": "38a58ff...",
+    "historical_raw_json_sha256": "1dcd..."
+  },
+  "phase_1a_ctl_kernel": {
+    "tests_passed": 8,
+    "status": "PASS"
+  },
+  "phase_1b_architecture_audit": {
+    "status": "PASS",
+    "selected_layer": 10
+  },
+  "state_extraction": {
+    "S1_mean_delta_norm": 19.11787,
+    "S2_mean_delta_norm": 33.24892,
+    "S3_mean_delta_norm": 15.83823,
+    "perturbation_rank": {
+      "S1": 12,
+      "S2": 12,
+      "S3": 12
+    },
+    "PC1_variance": {
+      "S1": 0.3261,
+      "S2": 0.479,
+      "S3": 0.6007
+    },
+    "cross_sector_cosines": {
+      "S1_S2": 0.3012,
+      "S1_S3": -0.2257,
+      "S2_S3": -0.0245
+    },
+    "status": "PASS"
+  },
+  "controlled_sector_intervention": {
+    "calibration_records": 48,
+    "sector_interventions": 144,
+    "P": {
+      "delta": 33.552713,
+      "recovery": -0.098062,
+      "median": 0.124403,
+      "reversal": 0.629708,
+      "clean_to_clean": -1.756836,
+      "clean_to_corrupt": 0.978841
+    },
+    "S": {
+      "delta": 21.096608,
+      "recovery": -0.099907,
+      "median": 0.08491,
+      "reversal": 0.207301,
+      "clean_to_clean": -0.181152,
+      "clean_to_corrupt": -0.179036
+    },
+    "A": {
+      "delta": 14.616817,
+      "recovery": 0.037923,
+      "median": 0.021286,
+      "reversal": 0.082642,
+      "clean_to_clean": -0.00765,
+      "clean_to_corrupt": -0.043783
+    },
+    "hook_integrity_failures": 0,
+    "sham_failures": 0,
+    "status": "INSTRUMENTATION_PASS_ONLY"
+  },
+  "r3_full_factorial_exploration": {
+    "000": -3.8932,
+    "001": -3.2651,
+    "010": -4.3546,
+    "011": -3.5846,
+    "100": 0.9067,
+    "101": 1.1379,
+    "110": 5.0653,
+    "111": 5.0653,
+    "three_way_contrast": -0.373174,
+    "pairwise_contrasts": {
+      "PS": 4.43345,
+      "PA": -0.583414,
+      "SA": -0.044625
+    },
+    "bootstrap_95ci": [
+      -0.4098,
+      -0.3361
+    ],
+    "bootstrap_p": 0.0001,
+    "incremental_r2": 0.00146,
+    "grouped_cv_delta_rmse": 0.000895,
+    "grouped_cv_f_p": 0.084,
+    "interpretation": "Exploratory only; triadic irreducibility NOT established. Repeated template behavior was considered suspicious."
+  },
+  "transformerlens_equivalence_audit": {
+    "status": "FAILED",
+    "relative_logit_equivalence": 0.999,
+    "classification": "NUMERICAL_BACKEND_MISMATCH",
+    "authoritative_backend": "Hugging Face native"
+  },
+  "contextual_carrier": {
+    "candidate": "HF layer-10 block output at final position",
+    "train_joint_effective_rank": 4.2479,
+    "dK_variance_retention": {
+      "4": 0.840754,
+      "8": 0.919407,
+      "16": 0.967531,
+      "32": 0.990183,
+      "64": 0.999205
+    }
+  },
+  "selected_transport": {
+    "S1": {
+      "dimension": 64,
+      "ridge": 100
+    },
+    "S2": {
+      "dimension": 64,
+      "ridge": 100
+    },
+    "S3": {
+      "dimension": 64,
+      "ridge": 10
+    }
+  },
+  "contextual_realization": {
+    "selected_candidate": "dK4_pc10_pd10_tkfull_linear_ta1000.0",
+    "calibration_mean_normalized_coherence_defect": 0.8573122753,
+    "calibration_median_normalized_coherence_defect": 0.7601979842,
+    "total_parameters": 3856,
+    "held_out_test": {
+      "N": 48,
+      "mean_normalized_coherence_defect": 1.0653109898,
+      "median": 1.0132859945,
+      "std": 0.2117352,
+      "q05": 0.8942034,
+      "q25": 0.9673333,
+      "q75": 1.0720689,
+      "q95": 1.390838,
+      "min": 0.8179572,
+      "max": 1.9806374,
+      "absolute_coherence_defect_mean": 30.3436,
+      "phi_d_to_clean_error_mean": 29.6083,
+      "phi_d_to_clean_cosine": 0.57665,
+      "phi_c_to_clean_error_mean": 0.525289,
+      "phi_c_to_clean_median_error": 0.381613,
+      "phi_c_to_clean_cosine": 0.999922,
+      "tk_to_clean_error_mean": 5.2899,
+      "tk_to_clean_median_error": 4.07392,
+      "tk_to_clean_cosine": 0.979617
+    },
+    "calibration_to_test_mean_gap": 0.208,
+    "calibration_to_test_median_gap": 0.253,
+    "classification": "FROZEN_CONTEXTUAL_REALIZATION_GENERALIZATION_NOT_SUPPORTED"
+  },
+  "negative_result_robustness": {
+    "mean": 1.0653109898,
+    "median": 1.0132859945,
+    "MAD": 0.048527,
+    "trimmed_mean_10_percent": 1.027187,
+    "threshold_fraction_above": {
+      "0.25": 1.0,
+      "0.50": 1.0,
+      "0.75": 1.0,
+      "1.00": 0.5625
+    },
+    "template_mean_range": 0.368,
+    "pair_mean_range": 0.6755,
+    "robust_outliers": 5,
+    "bootstrap_mean_95ci": [
+      1.011149,
+      1.13197
+    ],
+    "bootstrap_median_95ci": [
+      0.990756,
+      1.025335
+    ],
+    "template_grouped_95ci": [
+      1.002389,
+      1.138276
+    ],
+    "pair_grouped_95ci": [
+      1.009403,
+      1.148491
+    ],
+    "worst_quartile_mean": 0.981959,
+    "lowest_half_mean": 0.956239,
+    "leave_one_out_max_change": 0.019475,
+    "classification": "NEGATIVE_RESULT_ROBUST"
+  },
+  "scientific_synthesis": {
+    "ctl_kernel": "SUPPORTED",
+    "dataset": "SUPPORTED",
+    "behavioral_separation": "SUPPORTED_WITH_HETEROGENEITY",
+    "sectors": "SUPPORTED_AS_OPERATIONAL_SECTORS",
+    "controlled_intervention": "SUPPORTED",
+    "sector_transport": "SUPPORTED_WITH_HETEROGENEITY",
+    "contextual_carrier": "SUPPORTED",
+    "train_cal_contextual_realization": "SUPPORTED_AS_TRAIN_CALIBRATION_OPERATION",
+    "frozen_contextual_realization": "NOT_SUPPORTED",
+    "negative_robustness": "SUPPORTED",
+    "phi_c_reconstruction": "NOT_SUPPORTED",
+    "phi_d_weakness": "DIAGNOSTIC",
+    "phi_d_causal_explanation": "NOT_ESTABLISHED",
+    "triadic_irreducibility": "NOT_ESTABLISHED",
+    "geometric_realization": "NOT_TESTED",
+    "overall": "NEGATIVE_RESULT_ROBUST_ACROSS_PRIMARY_SUMMARIES"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "experiment_id": "ETTR-CTL-2-GPT2",
+  "dataset_version": "v1.1",
+  "records": 192,
+  "design": {
+    "templates": 12,
+    "ordered_pairs_per_template": 16,
+    "total_ordered_pairs": 192,
+    "target_names": 32,
+    "single_token_target_names": 32,
+    "clean_corrupt_design": "exact crossed paired design"
+  },
+  "dataset_quality": {
+    "v1.0_status": "REJECTED",
+    "v1.0_reason": "target-token asymmetry",
+    "v1.1_status": "ACCEPTED",
+    "v1.1_reason": "exact 192 records, 12 templates x 16 ordered pairs, 32 single-token GPT-2 names, exact crossed design"
+  },
+  "historical_hashes": {
+    "scientific_sha256": "38a58ff...",
+    "historical_raw_json_sha256": "1dcd..."
+  },
+  "split": {
+    "train": 96,
+    "calibration": 48,
+    "test": 48
+  },
+  "target_position": "GPT-2 target prediction evaluated from the final prompt representation; target token not fed before prediction."
+}

@@ -1,0 +1,66 @@
+{
+  "experiment_id": "ETTR-CTL-2-GPT2",
+  "experiment_title": "ETTR-CTL-2: A Two-Model Empirical Reconstruction of Contextual Transport",
+  "model": {
+    "name": "GPT-2 Small",
+    "identifier": "openai-community/gpt2",
+    "architecture": "GPT-2",
+    "layers": 12,
+    "hidden_size": 768,
+    "attention_heads": 12,
+    "vocabulary_size": 50257,
+    "maximum_position_embeddings": 1024,
+    "activation": "gelu_new"
+  },
+  "selected_layer": 10,
+  "operational_sectors": {
+    "S1": "contextual interaction / attention output",
+    "S2": "state propagation across depth / residual state entering block",
+    "S3": "feature transformation / MLP output"
+  },
+  "backend": {
+    "framework": "Hugging Face Transformers",
+    "transformers_version": "5.16.1",
+    "primary_backend": "Hugging Face native",
+    "secondary_backend": "TransformerLens exploratory audit"
+  },
+  "hardware": {
+    "device": "NVIDIA Tesla T4",
+    "precision": "FP16"
+  },
+  "dataset": {
+    "records": 192,
+    "templates": 12,
+    "ordered_pairs_per_template": 16,
+    "target_names": 32,
+    "dataset_version": "v1.1"
+  },
+  "transport": {
+    "candidate_dimensions": [
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "contextual_carrier_dimension": 4,
+    "transport_maps": "linear ridge regression",
+    "evaluation": "calibration selection followed by held-out test"
+  },
+  "scientific_status": {
+    "ctl_kernel": "SUPPORTED",
+    "dataset": "SUPPORTED",
+    "behavioral_separation": "SUPPORTED_WITH_HETEROGENEITY",
+    "operational_sectors": "SUPPORTED_AS_OPERATIONAL_SECTORS",
+    "controlled_intervention": "SUPPORTED",
+    "sector_transport": "SUPPORTED_WITH_HETEROGENEITY",
+    "contextual_carrier": "SUPPORTED",
+    "train_cal_contextual_realization": "SUPPORTED_AS_TRAIN_CALIBRATION_OPERATION",
+    "frozen_contextual_realization_generalization": "NOT_SUPPORTED",
+    "phi_c_reconstruction": "NOT_SUPPORTED",
+    "triadic_irreducibility": "NOT_ESTABLISHED",
+    "geometric_realization": "NOT_TESTED",
+    "overall": "NEGATIVE_RESULT_ROBUST_ACROSS_PRIMARY_SUMMARIES"
+  },
+  "experiment_status": "CLOSED"
+}
