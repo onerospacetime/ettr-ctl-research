@@ -1,0 +1,8 @@
+{
+  "experiment_id": "ETTR-CTL-LLAMA-1",
+  "dataset_records": 192,
+  "dataset_sha256": "7b14ddebef594859cf284deb5037ac9bb7e67956edb640012eaa257325e8769d",
+  "target_position_rule": "p_T = L(P); hidden state evaluated at i_T = L(P)-1",
+  "clean_corrupt_design": "paired clean/corrupt conditions",
+  "target_ids_derived_independently_for_llama": true
+}

@@ -1,0 +1,50 @@
+{
+  "experiment_id": "ETTR-CTL-LLAMA-1",
+  "transport": {
+    "S1": {
+      "test_nrmse_transport": 0.97484209,
+      "test_nrmse_identity": 0.973854329,
+      "relative_improvement_percent": -0.104854,
+      "cosine_transport": 0.158531,
+      "cosine_identity": 0.162613
+    },
+    "S2": {
+      "test_nrmse_transport": 1.068554146,
+      "test_nrmse_identity": 1.068859612,
+      "relative_improvement_percent": 0.010263,
+      "cosine_transport": -0.004318,
+      "cosine_identity": -0.004375
+    },
+    "S3": {
+      "test_nrmse_transport": 1.009386142,
+      "test_nrmse_identity": 1.010317125,
+      "relative_improvement_percent": 0.073115,
+      "cosine_transport": 0.027504,
+      "cosine_identity": 0.026982
+    }
+  },
+  "triadic_analysis": {
+    "primary_status": "HELD_OUT_TRIADIC_PREDICTIVE_DISADVANTAGE_SUPPORTED",
+    "ctl_irreducibility": "NOT_ESTABLISHED"
+  },
+  "rank_robustness": {
+    "status": "HELD_OUT_TRIADIC_PREDICTIVE_EFFECT_UNRESOLVED",
+    "dyadic_mse": 418.5135378562957,
+    "triadic_mse": 416.46091629639744,
+    "delta_mse": 2.0526215598982844,
+    "relative_improvement_percent": 0.49045523602705765,
+    "bootstrap_ci_95": [
+      -0.44518365371362373,
+      6.363428016130131
+    ]
+  },
+  "closure": {
+    "formal_ctl_structure": "SUPPORTED",
+    "contextual_triatic_admissibility": "NOT_EMPIRICALLY_IDENTIFIED",
+    "K_C": "NOT_IDENTIFIED",
+    "Phi_C": "NOT_RECONSTRUCTED",
+    "full_logical_covariance": "NOT_TESTED",
+    "ctl_irreducibility": "NOT_ESTABLISHED",
+    "geometric_realization": "NOT_TESTED"
+  }
+}

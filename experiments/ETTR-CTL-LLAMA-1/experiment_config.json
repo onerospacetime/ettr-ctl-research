@@ -1,0 +1,18 @@
+{
+  "experiment_id": "ETTR-CTL-LLAMA-1",
+  "model": "meta-llama/Llama-3.2-3B",
+  "seed": 42,
+  "selected_layer": 14,
+  "hidden_size": 3072,
+  "sectors": {
+    "S1": "contextual interaction / attention output",
+    "S2": "state propagation across depth / residual state entering block",
+    "S3": "feature transformation / MLP output"
+  },
+  "backend": "Hugging Face Transformers",
+  "hardware": "NVIDIA Tesla T4",
+  "device": "cuda:0",
+  "dtype": "BF16",
+  "dataset_records": 192,
+  "experiment_status": "closed"
+}
